@@ -5,10 +5,18 @@ import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import useStyles from './styles';
 import { IPlace } from '../../interfaces/genericInterface';
 
-const List = ({places,childClicked,isLoading}:{places:Array<IPlace>,childClicked:any,isLoading:Boolean}) => {
+interface IListProps {
+  places:Array<IPlace>,
+  childClicked:Number,
+  isLoading:Boolean,
+  type:string,
+  rating:string,
+  setRating:Function,
+  setType:Function
+}
+
+const List = ({places,childClicked,isLoading,type,rating,setRating,setType}:IListProps) => {
   const classes = useStyles();
-  const [type,setType] = useState('restaurants');
-  const [rating,setRating] = useState('');
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
@@ -49,7 +57,7 @@ const List = ({places,childClicked,isLoading}:{places:Array<IPlace>,childClicked
                   <Grid ref={elRefs[i]} item key={i} xs={12}>
                     <PlaceDetails 
                     place={place} 
-                    selected={Number(childClicked) === i} 
+                    selected={childClicked === i} 
                     refProp={elRefs[i]}/>
                   </Grid>
                 ))}
