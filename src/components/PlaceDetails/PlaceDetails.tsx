@@ -1,12 +1,11 @@
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Typography } from '@material-ui/core';
+import LocationOnIcon from '@material-ui/icons/LocationOnOutlined';
+import PhoneIcon from '@material-ui/icons/Phone';
+import Rating from '@material-ui/lab/Rating';
 import React from 'react';
 import { IPlace } from '../../interfaces/genericInterface';
-import { Box, Typography, Grid, Paper, Button, Card, CardMedia,CardContent,CardActions,Chip } from '@material-ui/core';
-import PhoneIcon from '@material-ui/icons/Phone';
-import LocationOnIcon from '@material-ui/icons/LocationOnOutlined';
-import  Rating from '@material-ui/lab/Rating';
+import useStyles from './styles';
 
-import useStyles from './styles'
-import { ArrowUpward } from '@material-ui/icons';
 
 const PlaceDetails = ({place,selected,refProp}:{place:IPlace,selected:any,refProp:any}) => {
   const classes = useStyles();

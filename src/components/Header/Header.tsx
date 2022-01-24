@@ -7,9 +7,11 @@ import useStyles from './styles';
 const Header = ({setCoordinates}:{setCoordinates:Function}) => {
   const classes = useStyles();
   const [autocomplete,setAutocomplete]= useState<any>({});
+  const coordinatesByDefault = {lat:-2.150042599999992,lng:-79.9117772};
+
   const onPlaceChanged = () => {
-    const lat = autocomplete?.getPlace().geometry.location.lat()|| 0;
-    const lng = autocomplete?.getPlace().geometry.location.lng()|| 0;
+    const lat = autocomplete?.getPlace()?.geometry?.location?.lat()|| coordinatesByDefault.lat;
+    const lng = autocomplete?.getPlace()?.geometry?.location?.lng()|| coordinatesByDefault.lng;
     setCoordinates({lat,lng});
   }
   const onLoad=(autoC:any)=>setAutocomplete(autoC);

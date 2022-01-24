@@ -6,7 +6,6 @@ import  Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles';
 import { IPlace } from '../../interfaces/genericInterface';
-import { env } from 'process';
 
 const urlDemoImage = "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg";
 const Map = ({
