@@ -1,9 +1,9 @@
-import React,{createRef,useEffect,useState} from 'react';
-import { CircularProgress, Grid, Typography,InputLabel,MenuItem,FormControl,Select } from "@material-ui/core";
-import PlaceDetails from '../PlaceDetails/PlaceDetails';
-
-import useStyles from './styles';
+import { CircularProgress, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@material-ui/core";
+import React, { createRef, useEffect, useState } from 'react';
 import { IPlace } from '../../interfaces/genericInterface';
+import PlaceDetails from '../PlaceDetails/PlaceDetails';
+import useStyles from './styles';
+
 
 interface IListProps {
   places:Array<IPlace>,

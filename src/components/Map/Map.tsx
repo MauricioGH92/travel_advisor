@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import GoogleMapReact from 'google-map-react';
-import { Paper,Typography, useMediaQuery } from "@material-ui/core";
+import { Paper, Typography, useMediaQuery } from "@material-ui/core";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
-import  Rating from '@material-ui/lab/Rating';
-
-import useStyles from './styles';
+import Rating from '@material-ui/lab/Rating';
+import GoogleMapReact from 'google-map-react';
+import React from 'react';
 import { IPlace } from '../../interfaces/genericInterface';
+import useStyles from './styles';
+
 
 const urlDemoImage = "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg";
 const Map = ({
