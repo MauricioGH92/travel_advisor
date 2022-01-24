@@ -15,6 +15,9 @@ const App = () => {
   const [bounds,setBounds] =useState(null);
   const [childClicked,setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [type,setType] = useState('restaurants');
+  const [rating,setRating] = useState('');
+
   useEffect(()=>{
     setIsLoading(true);
     if (!("geolocation" in navigator)) {
@@ -51,8 +54,12 @@ const App = () => {
         <Grid item xs={12} md={4}>
           <List 
             places={places} 
-            childClicked={childClicked} 
+            childClicked={Number(childClicked)} 
             isLoading={isLoading}
+            type={type}
+            rating={rating}
+            setRating={setRating}
+            setType={setType}
             />
         </Grid>
         <Grid item xs={12} md={8}>
