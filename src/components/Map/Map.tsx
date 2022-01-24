@@ -6,6 +6,7 @@ import  Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles';
 import { IPlace } from '../../interfaces/genericInterface';
+import { env } from 'process';
 
 const urlDemoImage = "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg";
 const Map = ({
@@ -16,11 +17,10 @@ const Map = ({
   setChildClicked
 }:{setCoordinates:any,setBounds:any,coordinates:any,places:Array<IPlace>,setChildClicked:Function}) => {
   const classes = useStyles();
-  //const places:Array<any> =[];
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact 
-          bootstrapURLKeys={{key:'AIzaSyD-aBlNLrTzXWDx0hmgtcOoWJeuueFXwI4'}}
+          bootstrapURLKeys={{key:process.env.REACT_APP_MAPS_KEY||""}}
           center ={coordinates}
           defaultZoom = {14}
           margin={[50,50,50,50]}
